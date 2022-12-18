@@ -33,7 +33,7 @@
             text="Sign in"
             type="primary"
             data-test="login-button"
-            @click="loginUser"
+            @click="LOGIN_USER()"
           />
         </div>
       </div>
@@ -44,9 +44,13 @@
 </template>
 
 <script>
+import { mapMutations, mapState } from "vuex";
+
 import ActionButton from "@/components/shared/ActionButton";
 import ProfileImage from "@/components/navigation/ProfileImage";
 import SubNav from "@/components/navigation/SubNav";
+
+import { LOGIN_USER } from "@/store";
 
 export default {
   name: "MainNav",
@@ -74,14 +78,20 @@ export default {
         "h-32": this.isLoggedIn,
       };
     },
-    isLoggedIn() {
-      return this.$store.state.isLoggedIn;
-    },
+    // isLoggedIn() { !!mapState helps to make this action cleaner
+    //   return this.$store.state.isLoggedIn;
+    // },
+    ...mapState({
+      isLoggedIn: (state) => state.isLoggedIn,
+      // isLoggedIn: "isLoggedIn", !!the same as above
+    }),
+    // ...mapState(["isLoggedIn"]), !!also the same as above
   },
   methods: {
-    loginUser() {
-      this.$store.commit("LOGIN_USER");
-    },
+    // LOGIN_USER() { !!mapMutations helps to make this action cleaner
+    //   this.$store.commit(LOGIN_USER);
+    // },
+    ...mapMutations([LOGIN_USER]),
   },
 };
 </script>
