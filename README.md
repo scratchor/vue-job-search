@@ -10,6 +10,11 @@ yarn install
 yarn serve
 ```
 
+### Start json-server
+```
+yarn backend
+```
+
 ### Compiles and minifies for production
 ```
 yarn build
@@ -17,7 +22,7 @@ yarn build
 
 ### Run your unit tests
 ```
-yarn test:unit
+yarn test
 ```
 
 ### Lints and fixes files
