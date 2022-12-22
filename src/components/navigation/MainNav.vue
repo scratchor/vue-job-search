@@ -50,7 +50,7 @@ import ActionButton from "@/components/shared/ActionButton";
 import ProfileImage from "@/components/navigation/ProfileImage";
 import SubNav from "@/components/navigation/SubNav";
 
-import { LOGIN_USER } from "@/store";
+import { LOGIN_USER } from "@/store/constants";
 
 export default {
   name: "MainNav",

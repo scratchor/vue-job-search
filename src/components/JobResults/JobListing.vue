@@ -39,6 +39,9 @@
               </li>
             </ul>
           </div>
+
+          <h2 class="mt-5 mb-2 font-medium">Job Type:</h2>
+          <span>{{ job.jobType }}</span>
         </div>
 
         <div class="mt-2 text-center">
